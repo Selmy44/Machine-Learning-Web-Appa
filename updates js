@@ -1,0 +1,62 @@
+// Import React and other necessary modules
+import React, { useState } from 'react';
+
+// Define a functional component for a single blog post
+const BlogPost = ({ title, content }) => (
+  <div>
+    <h2>{title}</h2>
+    <p>{content}</p>
+  </div>
+);
+
+// Define the main App component
+const App = () => {
+  // State to manage blog posts
+  const [posts, setPosts] = useState([
+    { title: 'First Post', content: 'This is the content of the first post.' },
+    { title: 'Second Post', content: 'This is the content of the second post.' },
+    // Add more posts as needed
+  ]);
+
+  // State to manage new post form inputs
+  const [newPost, setNewPost] = useState({ title: '', content: '' });
+
+  // Function to handle form submission and add a new post
+  const handleAddPost = () => {
+    setPosts([...posts, newPost]);
+    setNewPost({ title: '', content: '' });
+  };
+
+  return (
+    <div>
+      <h1>Blog Platform</h1>
+
+      {/* Form to add a new blog post */}
+      <div>
+        <label>Title:</label>
+        <input
+          type="text"
+          value={newPost.title}
+          onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+        />
+        <br />
+        <label>Content:</label>
+        <textarea
+          value={newPost.content}
+          onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
+        ></textarea>
+        <br />
+        <button onClick={handleAddPost}>Add Post</button>
+      </div>
+
+      {/* Display the list of blog posts */}
+      <div>
+        {posts.map((post, index) => (
+          <BlogPost key={index} title={post.title} content={post.content} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default App;
