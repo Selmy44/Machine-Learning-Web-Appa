@@ -1,31 +1,41 @@
-function add() {
-  var num1 = parseFloat(document.getElementById('num1').value);
-  var num2 = parseFloat(document.getElementById('num2').value);
-  var result = num1 + num2;
-  document.getElementById('result').innerHTML = 'Result: ' + result;
-}
+// Import necessary React components and libraries
+import React, { useState } from 'react';
 
-function subtract() {
-  var num1 = parseFloat(document.getElementById('num1').value);
-  var num2 = parseFloat(document.getElementById('num2').value);
-  var result = num1 - num2;
-  document.getElementById('result').innerHTML = 'Result: ' + result;
-}
+// Dummy data for blog posts
+const dummyPosts = [
+  { id: 1, title: 'First Post', content: 'This is the content of the first post.' },
+  { id: 2, title: 'Second Post', content: 'This is the content of the second post.' },
+  // Add more dummy posts as needed
+];
 
-function multiply() {
-  var num1 = parseFloat(document.getElementById('num1').value);
-  var num2 = parseFloat(document.getElementById('num2').value);
-  var result = num1 * num2;
-  document.getElementById('result').innerHTML = 'Result: ' + result;
-}
+// BlogPost component to display individual blog posts
+const BlogPost = ({ post }) => (
+  <div>
+    <h2>{post.title}</h2>
+    <p>{post.content}</p>
+  </div>
+);
 
-function divide() {
-  var num1 = parseFloat(document.getElementById('num1').value);
-  var num2 = parseFloat(document.getElementById('num2').value);
-  if (num2 === 0) {
-    document.getElementById('result').innerHTML = 'Cannot divide by zero';
-  } else {
-    var result = num1 / num2;
-    document.getElementById('result').innerHTML = 'Result: ' + result;
-  }
-}
+// BlogApp component to display the list of blog posts
+const BlogApp = () => {
+  // State to manage the list of blog posts
+  const [posts, setPosts] = useState(dummyPosts);
+
+  return (
+    <div>
+      <h1>My Blog</h1>
+      {posts.map(post => (
+        <BlogPost key={post.id} post={post} />
+      ))}
+    </div>
+  );
+};
+
+// Entry point of the application
+const App = () => (
+  <div>
+    <BlogApp />
+  </div>
+);
+
+export default App;
