@@ -1,0 +1,23 @@
+body{
+  background-image: url(/pictures/background1.jpg);
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-attachment: fixed;
+  }
+
+.first{
+  border: 2px solid #9c0808;
+  background-color: #2fa348c5;
+  opacity: 0.4;
+}
+
+.main{
+  border-image-repeat: repeat;
+  color: #520202;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.calling{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* you have to add codes here */
