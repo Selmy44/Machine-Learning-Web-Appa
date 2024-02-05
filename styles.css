@@ -1,14 +1,29 @@
 body{
-  background-image: url(/pictures/background1.jpg);
-  background-repeat: repeat-x;
+  text-transform: capitalize;
+  background-color: #37d6cec5;
   background-size: contain;
   background-attachment: fixed;
   }
 
+h1.one{
+  border: #7c230cc5;
+  line-height: normal;
+  white-space: nowrap;
+  word-spacing: 10px;
+  text-shadow: 3px 1px 10px #8a0f0f;
+
+} 
+
+h1.two{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .first{
+  letter-spacing: 5px;
+  text-decoration: underline;
+  text-align: center;
   border: 2px solid #9c0808;
   background-color: #2fa348c5;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .main{
